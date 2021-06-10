@@ -37,10 +37,15 @@ Example 2:
   Looper: $./looper <path_to_wordlist> "http://anywebsiteHere.com?q=" -sn
 ```
 #### Examples
+##### Help
 <img src="photos/helper.png">
+##### Example File
 <img src="photos/cat.png">
+##### Command with space
 <img src="photos/withSpace.png">
+##### Command without space
 <img src="photos/withoutSpace.png">
+##### Avoid banner
 <img src="photos/withoutBanner.png">
 
 #### Contribution From
