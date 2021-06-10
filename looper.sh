@@ -10,7 +10,6 @@
 # INITIAL CASE
 commandStart=""
 commandEnd=""
-
 #--------------------------------
 # BANNER, VARIABLES AND OPTIONS
 if [ "$1" = "-h" ];then
@@ -26,7 +25,16 @@ Author : Abhisek R
 Twitter : https://twitter.com/abh1sek_r
 Github : https://github.com/abhisek3122/
 ----------------------------------------
-Usage: ./looper.sh [-h(help) | -q(quiet)] <path_to_wordlist> <pre_command> <post_command>
+Disclaimer:
+Author and Contributors are not responsible for any malpractices done with this tool.
+----------------------------------------
+Usage: ./looper.sh [-h|-q] <path_to_wordlist> <pre_command> [-sy|-sn] <post_command>
+  -h (help)
+  -q (quiet)
+  -sy (space_between)
+  -sn (no_space_between)
+
+Do not forget to specify option [-sy | -sn]
 "
 	exit
 fi
@@ -34,7 +42,8 @@ fi
 if [ "$1" = "-q" ];then
 	wordlist="$2"
 	commandStart="$3"
-	commandEnd="$4"
+	space="$4"
+	commandEnd="$5"
 else
 echo "
  _                                
@@ -50,7 +59,8 @@ Github : https://github.com/abhisek3122/
 "
 	wordlist="$1"
 	commandStart="$2"
-	commandEnd="$3"
+ 	space="$3"
+	commandEnd="$4"
 fi
 
 #--------------------------------
@@ -58,8 +68,24 @@ fi
 echo ""
 while read -r line; do
 	name="$line"
-	command="$commandStart $name $commandEnd"
-	$command
+	if [ "$1" = "-q" ];then
+		if [ "$4" = "-sy" ];then
+		command="$commandStart $name $commandEnd"
+		$command
+		else
+		command="$commandStart$name$commandEnd"
+		$command
+		fi
+	else
+		if [ "$3" = "-sy" ];then
+		command="$commandStart $name $commandEnd"
+		$command
+		else
+		command="$commandStart$name$commandEnd"
+		$command
+		fi
+	fi
+	
 done < "$wordlist"
 
 echo "
