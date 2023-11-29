@@ -38,15 +38,19 @@ Example 2:
 ```
 #### Examples
 ##### Help
-<img src="photos/helper.png">
+![Help](photos/helper.png)
+
 ##### Example File
-<img src="photos/cat.png">
+![Example File](photos/cat.png)
+
 ##### Command with space
-<img src="photos/withSpace.png">
+![Command with space](photos/withSpace.png)
+
 ##### Command without space
-<img src="photos/withoutSpace.png">
+![Command without space](photos/withoutSpace.png)
+
 ##### Avoid banner
-<img src="photos/withoutBanner.png">
+![Avoid banner](photos/withoutBanner.png)
 
 #### Contribution From
 - [Abhisek R](https://www.linkedin.com/in/abhisek-r/)
